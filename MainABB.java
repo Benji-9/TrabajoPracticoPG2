@@ -3,6 +3,14 @@ package trabajoPractico;
 import java.util.Scanner;
 
 public class MainABB {
+	
+	public static void inOrder(ABBTDA a, int e) {
+		if (!a.ArbolVacio()) {
+			inOrder(a.HijoDer(), e + 6);
+			System.out.println(" ".repeat(e) + a.Raiz());
+			inOrder(a.HijoIzq(), e + 6);
+		}
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -30,7 +38,11 @@ public class MainABB {
             System.out.println(x);
             elementosMayores.Sacar(x);
         }
-
+        
         scanner.close();
+        System.out.println("Arbol: ");
+        inOrder(arbol, 1);
     }
+    
+    
 }

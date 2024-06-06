@@ -71,7 +71,16 @@ public class ABB implements ABBTDA {
             return menor(a.HijoIzq());
         }
     }
-
+    
+    public void postOrder(ABBTDA a) {
+    	if (!a.ArbolVacio()) {
+    		postOrder(a.HijoIzq());
+    		postOrder(a.HijoDer());
+    		System.out.println(a.Raiz());
+    		
+    		}
+    	}
+    
     public ConjuntoTDA ElementosMayoresQue(int k) {
         ConjuntoTDA conjunto = new Conjunto();
         conjunto.InicializarConjunto();
